@@ -10,8 +10,7 @@ class Player(pg.sprite.Sprite):
         self.groups = game.all_sprites
         pg.sprite.Sprite.__init__(self, self.groups)
         self.game = game
-        self.image = pg.Surface((TILE_SIZE, TILE_SIZE))
-        self.image.fill(YELLOW)
+        self.image = game.player_img
         self.rect = self.image.get_rect()
         self.vel = vec(0, 0)
         self.pos = vec(x, y) * TILE_SIZE
@@ -64,8 +63,8 @@ class Wall(pg.sprite.Sprite):
         self.groups = game.all_sprites, game.walls
         pg.sprite.Sprite.__init__(self, self.groups)
         self.game = game
-        self.image = pg.Surface((TILE_SIZE, TILE_SIZE))
-        self.image.fill(GREEN)
+        self.image = game.wall_img
+        #self.image.fill(GREEN)
         self.x = x
         self.y = y
         self.rect = self.image.get_rect()
